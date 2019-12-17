@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.danny.hongtu.mapper.FictionMapper">
+	<insert id="insertOne"  useGeneratedKeys="true" keyProperty="licenseId">
+        insert into t_fiction (fictionName,fictionUser,fictionClassify,totalSize,synopsis,newCatalogue,coverImg)
+        values (#{fictionName},#{fictionUser},#{fictionClassify},#{totalSize},#{synopsis},#{newCatalogue},#{coverImg})
+    </insert>
+
+	<select id="findAll" resultType="com.danny.hongtu.bean.FictionDetailBean">
+		select * from t_fiction
+	</select>
+</mapper>
