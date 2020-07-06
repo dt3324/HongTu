@@ -25,11 +25,13 @@ import static com.danny.hongtu.util.ObjectUtil.getString;
 @Component
 public class TokenInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(TokenInterceptor.class);
-    private static final int NUM = 5;
+
+    private final JwtService jwtService;
+
     @Autowired
-    private JwtService jwtService;
-    @Resource
-    private MyRedisClient redisUtilNew;
+    public TokenInterceptor(JwtService jwtService) {
+        this.jwtService = jwtService;
+    }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -58,23 +60,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             throw new RuntimeException("token为空");
         }
         Map<String, Object> chain = this.jwtService.parseJWT(token);
-        String policeNumber = getString(chain.get("police"));
-//        boolean exist = hasRole(policeNumber);
-//        if (!exist) {
-//            throw new RuntimeException( "登录已失效，请重新登录!");
-//        }
         return true;
     }
-
-    /**
-     * 查询Redis中是否有当前警号的登录记录
-     *
-     * @param policeNumber
-     * @return
-     */
-//    private boolean hasRole(String policeNumber) {
-//        Object getResult = this.redisUtilNew.get("" + policeNumber);
-//        return getResult != null && getResult.toString().length() > NUM;
-//    }
 
 }
