@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/fiction")
 @Api(value = "小说信息接口")
-public class FictionController extends BaseController{
+public class FictionController{
 
     @Resource
     private FictionService fictionService;
@@ -40,7 +40,7 @@ public class FictionController extends BaseController{
             @ApiResponse(code = 403,message = "你被禁止访问了"),
             @ApiResponse(code = 404,message = "没找到，哈哈哈")
     })
-    @PostMapping("/fictionList")
+    @RequestMapping("/fictionList")
     @ApiOperation(value = "查询小说列表",notes = "查询小说列表")
     public JsonResult findFictionList(@RequestParam(required = false) String fictionName,@RequestParam(required = false) String fictionUser){
         List<FictionDetailBean> list = fictionService.findFictionList(fictionName,fictionUser);

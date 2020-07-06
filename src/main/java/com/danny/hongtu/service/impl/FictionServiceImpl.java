@@ -24,7 +24,7 @@ public class FictionServiceImpl implements FictionService {
     private MyRedisClient myRedisClient;
     @Resource
     private FictionDao fictionDao;
-    @Autowired
+    @Resource
     private FictionMapper fictionMapper;
     @Override
     public void insertOne(){
