@@ -5,7 +5,7 @@ import com.danny.hongtu.exception.TokenException;
 import com.danny.hongtu.security.JwtField;
 import com.danny.hongtu.service.JwtService;
 import io.jsonwebtoken.*;
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

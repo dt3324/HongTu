@@ -17,15 +17,16 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <druid.version>1.1.14</druid.version>
     </properties>
     <dependencies>
-        <!--sqlite-->
-        <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+
+        <!-- SpringBoot 核心包 -->
         <!--<dependency>-->
-            <!--<groupId>org.xerial</groupId>-->
-            <!--<artifactId>sqlite-jdbc</artifactId>-->
-            <!--<version>3.23.1</version>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter</artifactId>-->
         <!--</dependency>-->
+
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -39,6 +40,20 @@
             <version>RELEASE</version>
         </dependency>
 
+        <!--阿里数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!--常用工具类 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
@@ -47,14 +62,9 @@
 
         <!--数据库mysql的支持  -->
         <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>2.2.5</version>
-        </dependency>
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.26</version>
+            <version>6.0.6</version>
         </dependency>
         <!--整合redis-->
         <dependency>

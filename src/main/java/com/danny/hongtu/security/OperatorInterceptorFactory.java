@@ -28,7 +28,7 @@ class FictionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
         boolean has = hasOperation(request, Operation.deviceInfo);
-        if (!has) {
+        if (has) {
             throw new RuntimeException("没有相关查看权限！");
         }
         return has;
