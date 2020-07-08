@@ -19,18 +19,20 @@ import static com.danny.hongtu.util.TokenUtil.hasOperation;
 @Configuration
 public class OperatorInterceptorFactory {
     @Bean
-    public FictionInterceptor getDeviceInterceptor() {
-        return new FictionInterceptor();
+    public FactionInterceptor getDeviceInterceptor() {
+        return new FactionInterceptor();
     }
 }
 
-class FictionInterceptor implements HandlerInterceptor {
+class FactionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
+        //判断token中的权限包不包含该权限
+        //具体逻辑需要根据实际开发修改
         boolean has = hasOperation(request, Operation.deviceInfo);
         if (has) {
             throw new RuntimeException("没有相关查看权限！");
         }
-        return has;
+        return !has;
     }
 }

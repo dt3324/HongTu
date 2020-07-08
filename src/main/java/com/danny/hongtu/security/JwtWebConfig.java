@@ -16,7 +16,7 @@ public class JwtWebConfig extends WebMvcConfigurationSupport {
     @Resource
     private TokenInterceptor tokenInterceptor;
     @Resource
-    private FictionInterceptor fictionInterceptor;
+    private FactionInterceptor factionInterceptor;
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
@@ -25,8 +25,7 @@ public class JwtWebConfig extends WebMvcConfigurationSupport {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/user/login", "/user/logout", "/jitGWAuth", "/jitGWRandom", "/jitDownloadVCTK");
         // 设备信息查询
-        registry.addInterceptor(fictionInterceptor)
-                .addPathPatterns("/fiction/**")
-                .excludePathPatterns();
+        registry.addInterceptor(factionInterceptor)
+                .addPathPatterns("/faction/**");
     }
 }

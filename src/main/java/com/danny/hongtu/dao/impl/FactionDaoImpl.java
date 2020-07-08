@@ -3,8 +3,8 @@ package com.danny.hongtu.dao.impl;
 import com.danny.hongtu.application.MyMongoClient;
 import com.danny.hongtu.bean.CatalogueBean;
 import com.danny.hongtu.bean.ContentBean;
-import com.danny.hongtu.bean.FictionDetailBean;
-import com.danny.hongtu.dao.FictionDao;
+import com.danny.hongtu.bean.FactionDetailBean;
+import com.danny.hongtu.dao.FactionDao;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import org.bson.Document;
@@ -17,20 +17,20 @@ import java.util.List;
  * @author danny
  */
 @Component
-public class FictionDaoImpl implements FictionDao {
+public class FactionDaoImpl implements FactionDao {
     @Override
-    public List<FictionDetailBean> findFictionList(BasicDBObject queryParam) {
-        FindIterable<Document> documents = MyMongoClient.getFictionDetailClient().find(queryParam);
-        ArrayList<FictionDetailBean> result = new ArrayList<>();
+    public List<FactionDetailBean> findFactionList(BasicDBObject queryParam) {
+        FindIterable<Document> documents = MyMongoClient.getFactionDetailClient().find(queryParam);
+        ArrayList<FactionDetailBean> result = new ArrayList<>();
         for (Document document : documents) {
-            result.add(FictionDetailBean.getFictionDetailBean(document));
+            result.add(FactionDetailBean.getFactionDetailBean(document));
         }
         return result;
     }
 
     @Override
-    public List<CatalogueBean> findFictionCatalogue(BasicDBObject queryParam, BasicDBObject sort) {
-        FindIterable<Document> documents = MyMongoClient.getFictionCatalogueClient().find(queryParam).sort(sort);
+    public List<CatalogueBean> findFactionCatalogue(BasicDBObject queryParam, BasicDBObject sort) {
+        FindIterable<Document> documents = MyMongoClient.getFactionCatalogueClient().find(queryParam).sort(sort);
         ArrayList<CatalogueBean> catalogueBeans = new ArrayList<>();
         for (Document document : documents) {
             catalogueBeans.add(CatalogueBean.getCatalogueBean(document));
@@ -39,8 +39,8 @@ public class FictionDaoImpl implements FictionDao {
     }
 
     @Override
-    public ContentBean findFictionContent(BasicDBObject queryParam) {
-        FindIterable<Document> documents = MyMongoClient.getFictionContentClient().find(queryParam).limit(1);
+    public ContentBean findFactionContent(BasicDBObject queryParam) {
+        FindIterable<Document> documents = MyMongoClient.getFactionContentClient().find(queryParam).limit(1);
         ContentBean contentBean = null;
         for (Document document : documents) {
             contentBean = ContentBean.getCatalogueBean(document);

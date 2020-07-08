@@ -1,6 +1,6 @@
 package com.danny.hongtu.service.impl;
 
-import com.danny.hongtu.service.FictionService;
+import com.danny.hongtu.service.FactionService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,21 +8,19 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FictionServiceImplTest {
+public class FactionServiceImplTest {
 
     @Resource
-    private FictionService fictionService;
+    private FactionService factionService;
 
     @Test
     public void insertOne() {
-        fictionService.insertOne();
+        factionService.insertOne();
     }
     @Test
     public void findAll() {
-        fictionService.findAll();
+        factionService.findAll();
     }
 }

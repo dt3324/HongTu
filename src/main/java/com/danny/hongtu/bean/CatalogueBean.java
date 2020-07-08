@@ -7,10 +7,10 @@ import org.bson.Document;
  */
 public class CatalogueBean {
     private Long id;
-    private String fictionName;
-    private String fictionUser;
-    private String fictionClassify;
-    private String fictionClassifyChild;
+    private String factionName;
+    private String factionUser;
+    private String factionClassify;
+    private String factionClassifyChild;
     private String synopsis;
     private String lastTime;
     private String chapterUrl;
@@ -20,10 +20,10 @@ public class CatalogueBean {
         CatalogueBean catalogueBean = new CatalogueBean();
         catalogueBean.setId(Long.valueOf(document.getInteger("id")));
         catalogueBean.setChapterName(document.getString("chapterName"));
-        catalogueBean.setFictionName(document.getString("fictionName"));
-        catalogueBean.setFictionUser(document.getString("fictionUser"));
-        catalogueBean.setFictionClassify(document.getString("fictionClassify"));
-        catalogueBean.setFictionClassifyChild(document.getString("fictionClassifyChild"));
+        catalogueBean.setFactionName(document.getString("factionName"));
+        catalogueBean.setFactionUser(document.getString("factionUser"));
+        catalogueBean.setFactionClassify(document.getString("factionClassify"));
+        catalogueBean.setFactionClassifyChild(document.getString("factionClassifyChild"));
         catalogueBean.setSynopsis(document.getString("synopsis"));
         catalogueBean.setLastTime(document.getString("lastTime"));
         catalogueBean.setChapterUrl(null);
@@ -38,36 +38,36 @@ public class CatalogueBean {
         this.id = id;
     }
 
-    public String getFictionName() {
-        return fictionName;
+    public String getFactionName() {
+        return factionName;
     }
 
-    public void setFictionName(String fictionName) {
-        this.fictionName = fictionName;
+    public void setFactionName(String factionName) {
+        this.factionName = factionName;
     }
 
-    public String getFictionUser() {
-        return fictionUser;
+    public String getFactionUser() {
+        return factionUser;
     }
 
-    public void setFictionUser(String fictionUser) {
-        this.fictionUser = fictionUser;
+    public void setFactionUser(String factionUser) {
+        this.factionUser = factionUser;
     }
 
-    public String getFictionClassify() {
-        return fictionClassify;
+    public String getFactionClassify() {
+        return factionClassify;
     }
 
-    public void setFictionClassify(String fictionClassify) {
-        this.fictionClassify = fictionClassify;
+    public void setFactionClassify(String factionClassify) {
+        this.factionClassify = factionClassify;
     }
 
-    public String getFictionClassifyChild() {
-        return fictionClassifyChild;
+    public String getFactionClassifyChild() {
+        return factionClassifyChild;
     }
 
-    public void setFictionClassifyChild(String fictionClassifyChild) {
-        this.fictionClassifyChild = fictionClassifyChild;
+    public void setFactionClassifyChild(String factionClassifyChild) {
+        this.factionClassifyChild = factionClassifyChild;
     }
 
     public String getSynopsis() {
@@ -106,10 +106,10 @@ public class CatalogueBean {
     public String toString() {
         return "CatalogueBean{" +
                 "id=" + id +
-                ", fictionName='" + fictionName + '\'' +
-                ", fictionUser='" + fictionUser + '\'' +
-                ", fictionClassify='" + fictionClassify + '\'' +
-                ", fictionClassifyChild='" + fictionClassifyChild + '\'' +
+                ", factionName='" + factionName + '\'' +
+                ", factionUser='" + factionUser + '\'' +
+                ", factionClassify='" + factionClassify + '\'' +
+                ", factionClassifyChild='" + factionClassifyChild + '\'' +
                 ", synopsis='" + synopsis + '\'' +
                 ", lastTime='" + lastTime + '\'' +
                 ", chapterUrl='" + chapterUrl + '\'' +

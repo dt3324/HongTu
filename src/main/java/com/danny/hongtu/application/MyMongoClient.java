@@ -11,35 +11,35 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class MyMongoClient {
     private static MongoTemplate mongoTemplate;
     static {
-        mongoTemplate = new MongoTemplate(new MongoClient("192.168.99.115", 27017), "fiction");
+        mongoTemplate = new MongoTemplate(new MongoClient("192.168.99.115", 27017), "faction");
     }
     public static MongoTemplate getMongoTemplate(){
         return mongoTemplate;
     }
 
     /**
-     * 获取fiction库 fictionCatalogue 表的Client
+     * 获取faction库 factionCatalogue 表的Client
      * @return MongoCollection
      */
-    public static MongoCollection<Document> getFictionCatalogueClient(){
+    public static MongoCollection<Document> getFactionCatalogueClient(){
 
-        return mongoTemplate.getCollection("fictionCatalogue");
+        return mongoTemplate.getCollection("factionCatalogue");
     }
 
     /**
-     * 获取fiction库 fictionContent 表的Client
+     * 获取faction库 factionContent 表的Client
      * @return MongoCollection
      */
-    public static MongoCollection<Document> getFictionContentClient(){
-        return mongoTemplate.getCollection("fictionContent");
+    public static MongoCollection<Document> getFactionContentClient(){
+        return mongoTemplate.getCollection("factionContent");
     }
 
     /**
-     * 获取fiction库 fictionDetail 表的Client
+     * 获取faction库 factionDetail 表的Client
      * @return MongoCollection
      */
-    public static MongoCollection<Document> getFictionDetailClient(){
-        return mongoTemplate.getCollection("fictionDetail");
+    public static MongoCollection<Document> getFactionDetailClient(){
+        return mongoTemplate.getCollection("factionDetail");
     }
 
 }

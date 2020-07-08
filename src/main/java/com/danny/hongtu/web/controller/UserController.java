@@ -1,14 +1,9 @@
 package com.danny.hongtu.web.controller;
 
-import com.danny.hongtu.bean.CatalogueBean;
-import com.danny.hongtu.bean.ContentBean;
-import com.danny.hongtu.bean.FictionDetailBean;
 import com.danny.hongtu.bean.User;
 import com.danny.hongtu.mapper.UserMapper;
-import com.danny.hongtu.service.FictionService;
 import com.danny.hongtu.service.UserService;
 import com.danny.hongtu.util.JsonResult;
-import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +28,7 @@ public class UserController{
     private UserService userService;
 
     @PostMapping("/findAll")
-    public JsonResult findFictionContent(@RequestParam String username){
+    public JsonResult findFactionContent(@RequestParam String username){
         List<User> users = userMapper.findAll();
         return JsonResult.get(users);
     }

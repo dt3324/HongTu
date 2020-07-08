@@ -7,8 +7,8 @@ import org.bson.Document;
  */
 public class ContentBean {
     private Long length;
-    private String fictionName;
-    private String fictionUser;
+    private String factionName;
+    private String factionUser;
     private String chapterName;
     private String chapterContent;
     private String chapterTxt;
@@ -17,8 +17,8 @@ public class ContentBean {
         ContentBean catalogueBean = new ContentBean();
         catalogueBean.setLength(Long.valueOf(document.getInteger("length")));
         catalogueBean.setChapterName(document.getString("chapterName"));
-        catalogueBean.setFictionName(document.getString("fictionName"));
-        catalogueBean.setFictionUser(document.getString("fictionUser"));
+        catalogueBean.setFactionName(document.getString("factionName"));
+        catalogueBean.setFactionUser(document.getString("factionUser"));
         catalogueBean.setChapterContent(document.getString("chapterContent"));
         catalogueBean.setChapterTxt(document.getString("chapterTxt"));
         return catalogueBean;
@@ -32,20 +32,20 @@ public class ContentBean {
         this.length = length;
     }
 
-    public String getFictionName() {
-        return fictionName;
+    public String getFactionName() {
+        return factionName;
     }
 
-    public void setFictionName(String fictionName) {
-        this.fictionName = fictionName;
+    public void setFactionName(String factionName) {
+        this.factionName = factionName;
     }
 
-    public String getFictionUser() {
-        return fictionUser;
+    public String getFactionUser() {
+        return factionUser;
     }
 
-    public void setFictionUser(String fictionUser) {
-        this.fictionUser = fictionUser;
+    public void setFactionUser(String factionUser) {
+        this.factionUser = factionUser;
     }
 
     public String getChapterName() {
@@ -76,8 +76,8 @@ public class ContentBean {
     public String toString() {
         return "ContentBean{" +
                 "length=" + length +
-                ", fictionName='" + fictionName + '\'' +
-                ", fictionUser='" + fictionUser + '\'' +
+                ", factionName='" + factionName + '\'' +
+                ", factionUser='" + factionUser + '\'' +
                 ", chapterName='" + chapterName + '\'' +
                 ", chapterContent='" + chapterContent + '\'' +
                 ", chapterTxt='" + chapterTxt + '\'' +
