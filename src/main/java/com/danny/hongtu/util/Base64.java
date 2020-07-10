@@ -89,7 +89,7 @@ public class Base64 {
     /**
      * 解密
      */
-    public byte[] decode(String str) throws UnsupportedEncodingException {
+    public static byte[] decode(String str) throws UnsupportedEncodingException {
         StringBuffer sb = new StringBuffer();
         byte[] data = str.getBytes("US-ASCII");
         int len = data.length;
