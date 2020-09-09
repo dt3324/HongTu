@@ -28,14 +28,14 @@ public class UserController{
     private UserService userService;
 
     @PostMapping("/findAll")
-    public JsonResult findFactionContent(@RequestParam String username){
+    public JsonResult<List<User>> findFactionContent(@RequestParam String username){
         List<User> users = userMapper.findAll();
-        return JsonResult.get(users);
+        return new JsonResult<List<User>>().get(users);
     }
     @PostMapping("/login")
-    public JsonResult login(HttpServletResponse res, @RequestParam String username, @RequestParam String password){
+    public JsonResult<String> login(HttpServletResponse res, @RequestParam String username, @RequestParam String password){
         User u = userService.login(username,password,res);
-        return JsonResult.get("登录成功");
+        return new JsonResult<String>().get("登录成功");
     }
 
 }

@@ -40,13 +40,13 @@ public class FactionController {
     })
     @RequestMapping("/factionList")
     @ApiOperation(value = "查询小说列表",notes = "查询小说列表")
-    public JsonResult findFactionList(@RequestParam(required = false) String factionName,@RequestParam(required = false) String factionUser){
+    public JsonResult<List<FactionDetailBean>> findFactionList(@RequestParam(required = false) String factionName,@RequestParam(required = false) String factionUser){
         List<FactionDetailBean> list = factionService.findFactionList(factionName,factionUser);
         FactionDetailBean factionDetailBean = new FactionDetailBean();
         factionDetailBean.setFactionUser("aaaaaaaaaaaaaaaa");
         factionDetailBean.setFactionName("bbbbbbbbbbbbbbbbbbb");
         list.add(factionDetailBean);
-        return JsonResult.get(list);
+        return new JsonResult<List<FactionDetailBean>>().get(list);
     }
 
     //获取参数
@@ -57,9 +57,9 @@ public class FactionController {
     })
     @PostMapping("/factionCatalogue")
     @ApiOperation(value = "查询小说章节列表",notes = "查询小说章节列表")
-    public JsonResult findFactionCatalogue(@RequestParam String factionName,@RequestParam String factionUser){
+    public JsonResult<List<CatalogueBean>> findFactionCatalogue(@RequestParam String factionName,@RequestParam String factionUser){
         List<CatalogueBean> list = factionService.findFactionCatalogue(factionName,factionUser);
-        return JsonResult.get(list);
+        return new JsonResult<List<CatalogueBean>>().get(list);
     }
 
     //获取参数
@@ -71,8 +71,8 @@ public class FactionController {
     })
     @PostMapping("/factionContent")
     @ApiOperation(value = "查询小说章节内容",notes = "查询小说章节内容")
-    public JsonResult findFactionContent(@RequestParam String factionName,@RequestParam String factionUser,@RequestParam String chapterName){
+    public JsonResult<ContentBean> findFactionContent(@RequestParam String factionName,@RequestParam String factionUser,@RequestParam String chapterName){
         ContentBean contentBean = factionService.findFactionContent(factionName,factionUser,chapterName);
-        return JsonResult.get(contentBean);
+        return new JsonResult<ContentBean>().get(contentBean);
     }
 }

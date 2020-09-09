@@ -8,12 +8,12 @@ public class JsonResult<T> {
     private T data;
     private String massage;
 
-    public static JsonResult get() {
-        return new JsonResult();
+    public static JsonResult<Object> get() {
+        return new JsonResult<>();
     }
 
-    public static JsonResult get(Object e) {
-        JsonResult<Object> jsonResult = new JsonResult<>();
+    public JsonResult<T> get(T e) {
+        JsonResult<T> jsonResult = new JsonResult<>();
         jsonResult.setData(e);
         return jsonResult;
     }

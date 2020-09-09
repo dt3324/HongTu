@@ -12,8 +12,8 @@ public class BaseController {
     @SuppressWarnings("rawtypes")
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public JsonResult exceptionHandle(Exception e){
+    public JsonResult<String> exceptionHandle(Exception e){
         e.printStackTrace();
-        return JsonResult.get(e.getMessage());
+        return new JsonResult<String>().get(e.getMessage());
     }
 }
